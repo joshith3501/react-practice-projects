@@ -9,25 +9,28 @@ import {
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
-interface ItemProps {
-  downloads: string;
-  views: string;
-  shares: string;
-  tags: string[];
-}
-const Item = ({ downloads, views, shares, tags }: ItemProps) => {
+const Item = ({ image }: any) => {
+  const tags = image.tags.split(",");
+
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Pictures</CardTitle>
-        <CardDescription>Images will be rendered here</CardDescription>
+    <Card className="shadow-md">
+      <CardHeader className="p-0">
+        <CardTitle>
+          <img
+            src={image.webformatURL}
+            className="h-[300px] mx-auto object-fit"
+          ></img>
+        </CardTitle>
+        <CardDescription className="ml-[1.5rem] mt-[1.5rem]">
+          Photo by {image.user}
+        </CardDescription>
       </CardHeader>
       <CardContent>
-        <div>Download: {downloads}</div>
-        <div>View: {views}</div>
-        <div>Shares: {shares}</div>
-        <div className="my-1 py-1 flex flex-row gap-3 place-items-center">
-          {tags.map((tag) => (
+        <div>Download: {image.downloads}</div>
+        <div>View: {image.views}</div>
+        <div>Likes: {image.likes}</div>
+        <div className="py-3 flex flex-row gap-3 place-items-center overflow-x-auto">
+          {tags.map((tag: string[]) => (
             <Badge variant="secondary">{tag}</Badge>
           ))}
         </div>

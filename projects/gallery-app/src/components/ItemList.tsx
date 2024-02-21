@@ -1,4 +1,8 @@
-import Item from "./Item";
+
+//
+// THIS COMPONENT IS LONGER USED !!!!!!!!!!!!!!!!!!!
+//
+
 
 const ItemList = () => {
   let data = [
@@ -34,7 +38,7 @@ const ItemList = () => {
 
   return (
     <>
-      <div className="grid gap-5 grid-cols-1 m-10 sm:grid-cols-2 md:grid-cols-3 lg-grid-cols-4">
+      <div className="grid gap-5 grid-cols-1 m-2 md:m-8 sm:grid-cols-2 md:grid-cols-3 lg-grid-cols-4">
         {data.map((con) => (
           <Item
             downloads={con.downloads}
