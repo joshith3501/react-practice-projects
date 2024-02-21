@@ -1,6 +1,7 @@
 import "./index.css";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import ItemList from "./components/ItemList";
 
 function App() {
   return (
@@ -10,8 +11,9 @@ function App() {
           placeholder="Enter your term"
           className="w-96 focus-visible:outline-none"
         />
-        <Button>Search</Button>
+        <Button variant="outline">Search</Button>
       </form>
+      <ItemList />
     </main>
   );
 }
