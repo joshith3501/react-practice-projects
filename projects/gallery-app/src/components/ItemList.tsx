@@ -1,4 +1,4 @@
-
+import Item from './Item';
 //
 // THIS COMPONENT IS LONGER USED !!!!!!!!!!!!!!!!!!!
 //

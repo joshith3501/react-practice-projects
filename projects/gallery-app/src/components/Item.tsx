@@ -6,7 +6,7 @@ import {
   CardFooter,
   CardTitle,
 } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
 const Item = ({ image }: any) => {
@@ -30,13 +30,17 @@ const Item = ({ image }: any) => {
         <div>View: {image.views}</div>
         <div>Likes: {image.likes}</div>
         <div className="py-3 flex flex-row gap-3 place-items-center overflow-x-auto">
-          {tags.map((tag: string[]) => (
-            <Badge variant="secondary">{tag}</Badge>
+          {tags.map((tag: string[], index: number) => (
+            <Badge variant="secondary" key={index}>
+              {tag}
+            </Badge>
           ))}
         </div>
       </CardContent>
       <CardFooter>
-        <Button>Download Image</Button>
+        <a href={image.pageURL} className={buttonVariants({ variant: "default"})}>
+          Download
+        </a>
       </CardFooter>
     </Card>
   );
